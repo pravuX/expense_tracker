@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Expense Tracker</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-    <body>
-        <nav>
-            <ul class="nav-bar">
-                <li class="active"><a href="./index.html">Today</a></li>
-                <li><a href="./history.html">History</a></li>
-                <li><a href="./stats.html">Stats</a></li>
+
+<head>
+    <title>Expense Tracker</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3c31e6692b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="main flex">
+        <!-- Navigation Bar: sticky -->
+        <nav class="float">
+            <ul class="flex">
+                <li><a href="index.html" class="active">Today</a></li>
+                <li><a href="history.html">History</a></li>
             </ul>
         </nav>
-        <main>
-            <ul class="entries">
-                <li class="entry">
-                    <span class="title">Momos</span>
-                    <span class="cost">Rs.100</span>
-                </li>
-                <li class="entry">
-                    <span class="title">Chiya</span>
-                    <span class="cost">Rs.20</span>
-                </li>
-            </ul>
-        </main>
-        <footer>
-            <ul class="footer">
-                <li class="button">Add</li>
-                <li class="total">Total: Rs.120</li>
-            </ul>
+
+        <!-- Expense entries: scrollable -->
+        <section class="float flex entries">
+            <h3 class="entry-head">Todays Expenses:</h3>
+            <div class="entry">
+                <h3 class="entry-title">Momos</h3>
+                <p class="entry-cost">Rs.120</h3>
+            </div>
+            <div class="entry">
+                <h3 class="entry-title">Coke</h3>
+                <p class="entry-cost">Rs.60</h3>
+            </div>
+        </section>
+
+        <!-- Footer: sticky -->
+        <footer class="float flex">
+            <i class="fa-solid fa-circle-plus add-icon"></i>
+            <p id="today-total">Total: Rs.180</p>
         </footer>
-    </body>
+
+    </div>
+</body>
+
 </html>
