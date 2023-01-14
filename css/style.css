@@ -1,1 +1,148 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+/* Colors from:
+https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 3vh;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    background: rgb(0,0,214);
+    background: -moz-linear-gradient(140deg, rgba(0,0,214,1) 0%, rgba(61,0,224,1) 16%, rgba(96,2,238,1) 37%, rgba(153,101,244,1) 75%, rgba(183,148,246,1) 100%);
+    background: -webkit-linear-gradient(140deg, rgba(0,0,214,1) 0%, rgba(61,0,224,1) 16%, rgba(96,2,238,1) 37%, rgba(153,101,244,1) 75%, rgba(183,148,246,1) 100%);
+    background: linear-gradient(140deg, rgba(0,0,214,1) 0%, rgba(61,0,224,1) 16%, rgba(96,2,238,1) 37%, rgba(153,101,244,1) 75%, rgba(183,148,246,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0000d6",endColorstr="#b794f6",GradientType=1);
+}
+
+a {
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.float {
+    background-color: #d4bff9;
+    margin: 10px 0;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px #282828;
+}
+
+/* Main */
+
+.main {
+    margin: 0 auto;
+    width: 500px;
+    height: 94vh;
+}
+
+.main.flex {
+    flex-direction: column;
+}
+
+.main.float {
+    background-color: #efe5fd;
+    padding: 20px;
+}
+
+/* Nav */
+
+nav.float {
+    padding: 0;
+}
+
+ul.flex {
+    list-style-type: none;
+}
+
+ul li {
+    flex: 1; /* grows to occupy the available space */
+}
+
+nav li {
+    padding: 10px;
+    text-align: center;
+}
+
+nav li.active {
+    border-radius: 20px;
+    background-color: #5300e8;
+    color: #fff;
+}
+
+nav a {
+    color: #000;
+}
+
+nav li.active a {
+    color: #fff;
+}
+/* Entries */
+section.entries {
+    flex-direction: column; /* stack entries vertically */
+    overflow-y: auto; /* Make entries scrollable */
+    padding: 0;
+}
+
+section.entries > * {
+    padding: 15px
+}
+
+h3.entry-head {
+    color: #fff;
+    background-color: #5300e8;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    position: sticky; /* make the header sticky */
+    top: 0;
+}
+
+.entry:not(:last-child) { /* except for the last entry */
+    border-bottom: 1px solid #000;
+}
+
+section::-webkit-scrollbar {
+    width: 0; /* hide the scroll bar */
+}
+
+/* Footer */
+footer.flex {
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer #today-total {
+    border-radius: 20px;
+    background-color: #5300e8;
+    color: #fff;
+    text-align: center;
+    padding: 10px; /* occupies entire height of the footer */
+}
+
+footer .add-icon {
+    cursor: pointer;
+    color: #5300e8;
+    padding-left: 10px;
+    /* Remove ugly default button styles */
+    border-width: 0;
+    background-color: transparent;
+}
+
+footer .add-icon:hover {
+    color: #3d00e0;
+}
+
+@media (max-width: 768px ) {
+    .main {
+        width: 250px;
+        height: 80vh;
+    }
+}
