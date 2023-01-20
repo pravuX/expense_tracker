@@ -63,22 +63,22 @@ ul.flex {
 }
 
 ul li {
-    flex: 1; /* grows to occupy the available space */
+    flex: 1; /* each li grows to occupy the available space */
 }
 
-nav li {
+nav li a {
     padding: 10px;
     text-align: center;
+    color: #000;
+    /* gives the tabs a hit area spanning the width of li */
+    display: inline-block;
+    width: 100%;
 }
 
-nav li.active {
+nav li.active a {
     border-radius: 20px;
     background-color: #5300e8;
     color: #fff;
-}
-
-nav a {
-    color: #000;
 }
 
 nav li.active a {
@@ -95,7 +95,8 @@ section.entries > * {
     padding: 15px
 }
 
-h3.entry-head {
+.entries .entry-head,
+section.history .history-head {
     color: #fff;
     background-color: #5300e8;
     border-top-left-radius: 20px;
@@ -103,6 +104,7 @@ h3.entry-head {
 
     position: sticky; /* make the header sticky */
     top: 0;
+    justify-content: space-between;
 }
 
 .entry:not(:last-child) { /* except for the last entry */
@@ -119,15 +121,18 @@ footer.flex {
     justify-content: space-between;
 }
 
-footer #today-total {
+#today-total {
     border-radius: 20px;
     background-color: #5300e8;
     color: #fff;
     text-align: center;
-    padding: 10px; /* occupies entire height of the footer */
+    padding: 15px; /* occupies entire height of the footer */
 }
 
-footer .add-icon {
+.cal-icon,
+.left-icon,
+.right-icon,
+.add-icon {
     cursor: pointer;
     color: #5300e8;
     padding-left: 10px;
@@ -136,8 +141,54 @@ footer .add-icon {
     background-color: transparent;
 }
 
-footer .add-icon:hover {
+.add-icon:hover {
     color: #3d00e0;
+}
+
+/* History */
+section.history {
+    flex-direction: column; /* stack entries vertically */
+    overflow-y: auto; /* Make entries scrollable */
+    padding: 0;
+    flex-grow: 1;
+}
+
+section.history > * {
+    padding: 15px;
+}
+
+section.history .history-head {
+    color: #fff;
+    background-color: #5300e8;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    position: sticky; /* make the header sticky */
+    top: 0;
+    justify-content: space-between;
+}
+
+.cal-icon,
+.left-icon,
+.right-icon {
+    color: #fff;
+}
+
+.cal-icon:hover,
+.left-icon:hover,
+.right-icon:hover {
+    color: #ccc;
+}
+
+section.history .history-footer {
+    color: #fff;
+    background-color: #5300e8;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    position: sticky; /* make the footer sticky */
+    bottom: 0;
+    margin-top: auto; /* push it to the bottom */
 }
 
 @media (max-width: 768px ) {
