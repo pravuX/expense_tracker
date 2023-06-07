@@ -111,8 +111,13 @@ section.history .history-head {
     border-bottom: 1px solid #000;
 }
 
+/* hide the scroll bar on all browsers */
 section::-webkit-scrollbar {
-    width: 0; /* hide the scroll bar */
+    width: 0;
+}
+section {
+    -ms-overflow-style: none;
+    scrollbar-width: 0;
 }
 
 /* Footer */
